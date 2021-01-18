@@ -8,7 +8,7 @@ const cn = createCn('logo');
 export const Logo = React.memo(() => {
     return (
         <div className={ cn() }>
-            <img src="/img/logo.png" alt="" />
+            <img src="/fmt/img/logo.png" alt="" />
         </div>
     );
 });

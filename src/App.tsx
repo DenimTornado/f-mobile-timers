@@ -23,10 +23,10 @@ function App() {
                 <div className='inner'>
                     <Router>
                         <Switch>
-                            <Route exact={ true } path={ '/' }>
+                            <Route exact={ true } path={ '/fmt' }>
                                 <TimersPage/>
                             </Route>
-                            <Route exact={ true } path={ '/events' }>
+                            <Route exact={ true } path={ '/fmt/events' }>
                                 <EventsPage/>
                             </Route>
                         </Switch>

@@ -15,7 +15,7 @@ export const EventRow = React.memo<OwnProps>((props) => {
     const { ids, event, note, sub_events } = props.event;
     const [now, setNow] = useState(new Date());
     const eventDate = new Date(event.timer);
-    const eventImg = '/img/programs/' + ids + '.png';
+    const eventImg = '/fmt/img/programs/' + ids + '.png';
 
     useEffect(() => {
         setInterval(() => {
