@@ -30,7 +30,7 @@ export const EventRow = React.memo<OwnProps>((props) => {
             <div className={ cn('content') }>
                 <div className={ cn('main_event') }>
                     <div className={ cn('name') }>{ event.name }</div>
-                    <div className={ cn('timer') }>
+                    <div className={ cn('timer', {expiring: event.expiring}) }>
                         <EventDuration now={ now } duration={ eventDate }/>
                     </div>
                 </div>

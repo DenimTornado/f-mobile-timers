@@ -6,7 +6,7 @@ export const Events = [
             name: 'UEFA Europa League',
             timer: '2021-01-21T22:00:00+03:00'
         },
-        repitable: '',
+        repeatable: '',
         sub_events: [
             {
                 name: 'Energy offer (coins)',
@@ -17,17 +17,17 @@ export const Events = [
     {
         ids: 'leagues',
         note: '',
-        repitable: 'weekly',
+        repeatable: 'weekly',
         event: {
             name: 'League matchups',
-            timer: '2021-01-25T22:00:00+03:00'
+            timer: '2021-01-18T22:00:00+03:00'
         },
         sub_events: []
     },
     {
         ids: 'icons',
         note: 'Dont forget to play skill games',
-        repitable: 'weekly',
+        repeatable: 'weekly',
         event: {
             name: 'icons strike',
             timer: '2021-01-21T22:00:00+03:00'
@@ -37,17 +37,17 @@ export const Events = [
     {
         ids: 'becks',
         note: 'Dont forget to get Beckham points from ads',
-        repitable: 'weekly',
+        repeatable: 'weekly',
         event: {
             name: 'beckham quests',
-            timer: '2021-01-21T22:00:00+03:00'
+            timer: '2021-01-07T22:00:00+03:00'
         },
         sub_events: []
     },
     {
         ids: 'rivals',
         note: '',
-        repitable: 'monthly',
+        repeatable: 'monthly',
         event: {
             name: 'division rivals',
             timer: '2021-01-25T22:00:00+03:00'
@@ -55,15 +55,15 @@ export const Events = [
         sub_events: [
             {
                 name: 'weekly update',
-                repitable: 'weekly',
-                timer: '2021-01-20T22:00:00+03:00'
+                repeatable: 'weekly',
+                timer: '2021-01-13T22:00:00+03:00'
             }
         ]
     },
     {
         ids: 'starpass',
         note: '',
-        repitable: 'monthly',
+        repeatable: 'monthly',
         event: {
             name: 'starpass',
             timer: '2021-01-27T22:00:00+03:00'

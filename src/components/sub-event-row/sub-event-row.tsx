@@ -11,7 +11,7 @@ type OwnProps = Partial<{
 }>
 
 export const SubEventRow = React.memo<OwnProps>((props) => {
-    const { name, timer } = props.event;
+    const { name, timer, expiring } = props.event;
     const [now, setNow] = useState(new Date());
     const eventDate = new Date(timer);
 
@@ -25,7 +25,7 @@ export const SubEventRow = React.memo<OwnProps>((props) => {
     return (
         <div className={ cn() }>
             <div className={ cn('name') }>{ name }</div>
-            <div className={ cn('timer') }>
+            <div className={ cn('timer', {expiring: expiring}) }>
                 <EventDuration now={ now } duration={ eventDate }/>
             </div>
         </div>

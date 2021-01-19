@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createCn } from 'bem-react-classname';
 import { Events } from '../../constants/events';
 import { EventRow } from '../../components/event-row/event-row';
+import { getActualEvent } from '../../utils/getActualEvent';
 
 import './timers-page.scss';
+
 
 const cn = createCn('timers-page');
 const now = new Date().getTime();
 
 export const TimersPage = React.memo(() => {
+    const [actualEvents, setActualEvents] = useState([]);
+
+    useEffect(() => {
+        let actualEvents = [...Events];
+        for (let i = 0; i < Events.length; i++) {
+            actualEvents[i] = getActualEvent(actualEvents[i]);
+            let subEvents = actualEvents[i].sub_events;
+            for (let i = 0; i < subEvents.length; i++) {
+                subEvents[i] = getActualEvent(subEvents[i]);
+            }
+            actualEvents[i].sub_events = subEvents;
+        }
+        // @ts-ignore
+        setActualEvents(actualEvents);
+    }, []);
+
     return (
         <div className={ cn() }>
-            { Events.map((value) => {
-                let eventTime = new Date(value.event.timer).getTime();
-                if (eventTime < now && value.repitable !== '') {
-                    if (value.repitable === 'weekly') {
-
-                    }
-                }
-
-                if (eventTime > now) {
+            { actualEvents.map((value:any) => {
+                const eventTimer = new Date(value.event.timer).getTime();
+                if (eventTimer > now) {
                     return <EventRow key={value.ids} event={ value }/>
                 }
+
+                return null;
             })}
         </div>
     );
