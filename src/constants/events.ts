@@ -1,5 +1,36 @@
 export const Events = [
     {
+        ids: 'toty',
+        note: '',
+        event: {
+            name: 'toty',
+            timer: '2021-02-11T22:00:00+03:00'
+        },
+        repeatable: '',
+        sub_events: [
+            {
+                name: 'TOTY MID',
+                timer: '2021-01-27T22:00:00+03:00'
+            },
+            {
+                name: 'TOTY DEF',
+                timer: '2021-01-29T22:00:00+03:00'
+            }
+        ]
+    },
+    {
+        ids: 'marquee',
+        note: '',
+        event: {
+            name: 'marquee stars',
+            timer: '2021-01-26T22:00:00+03:00'
+        },
+        repeatable: '',
+        sub_events: [
+
+        ]
+    },
+    {
         ids: 'uel',
         note: '',
         event: {

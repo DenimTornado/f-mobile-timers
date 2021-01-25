@@ -28,6 +28,7 @@
     }
 
     &__timer {
+        min-width: 100px;
         &_expiring {
             color: lightcoral;
         }

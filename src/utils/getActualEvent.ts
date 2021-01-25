@@ -24,6 +24,17 @@ export function getActualEvent(value:any) {
             } else {
                 actualEvent.timer = newDateFormatted;
             }
+        } else if (actualEvent.repeatable === 'monthly') {
+            const fullDays = moment(eventTime).diff(now, 'd') * -1 + 28;
+            console.log(fullDays);
+            newDate = moment(eventTime).add(fullDays, 'd');
+            const newDateFormatted = newDate.format(format);
+
+            if (actualEvent.event) {
+                actualEvent.event.timer = newDateFormatted;
+            } else {
+                actualEvent.timer = newDateFormatted;
+            }
         }
     }
 
