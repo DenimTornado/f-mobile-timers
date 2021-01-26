@@ -13,6 +13,10 @@ export const Events = [
                 timer: '2021-01-27T22:00:00+03:00'
             },
             {
+                name: 'TOTY MID Energy Deadend',
+                timer: '2021-01-27T04:00:00+03:00'
+            },
+            {
                 name: 'TOTY DEF',
                 timer: '2021-01-29T22:00:00+03:00'
             }
