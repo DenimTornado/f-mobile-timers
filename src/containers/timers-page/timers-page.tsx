@@ -18,10 +18,14 @@ export const TimersPage = React.memo(() => {
         for (let i = 0; i < Events.length; i++) {
             actualEvents[i] = getActualEvent(actualEvents[i]);
             let subEvents = actualEvents[i].sub_events;
+            let actualSubEvents = [];
             for (let i = 0; i < subEvents.length; i++) {
-                subEvents[i] = getActualEvent(subEvents[i]);
+                const eventTimer = new Date(subEvents[i].timer).getTime();
+                if (eventTimer > now) {
+                    actualSubEvents.push(getActualEvent(subEvents[i]));
+                }
             }
-            actualEvents[i].sub_events = subEvents;
+            actualEvents[i].sub_events = actualSubEvents;
         }
         // @ts-ignore
         setActualEvents(actualEvents);
