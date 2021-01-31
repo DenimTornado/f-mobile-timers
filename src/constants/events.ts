@@ -9,14 +9,17 @@ export const Events = [
         repeatable: '',
         sub_events: [
             {
+                repeatable: '',
                 name: 'TOTY MID',
                 timer: '2021-01-27T22:00:00+03:00'
             },
             {
+                repeatable: '',
                 name: 'TOTY MID Energy Deadend',
                 timer: '2021-01-27T04:00:00+03:00'
             },
             {
+                repeatable: '',
                 name: 'TOTY DEF',
                 timer: '2021-01-29T22:00:00+03:00'
             }
@@ -44,6 +47,7 @@ export const Events = [
         repeatable: '',
         sub_events: [
             {
+                repeatable: '',
                 name: 'Energy offer (coins)',
                 timer: '2021-01-21T22:00:00+03:00'
             }
@@ -85,13 +89,13 @@ export const Events = [
         repeatable: 'monthly',
         event: {
             name: 'division rivals',
-            timer: '2021-01-25T22:00:00+03:00'
+            timer: '2021-02-22T22:00:00+03:00'
         },
         sub_events: [
             {
                 name: 'weekly update',
                 repeatable: 'weekly',
-                timer: '2021-01-13T22:00:00+03:00'
+                timer: '2021-01-25T22:00:00+03:00'
             }
         ]
     },
@@ -100,9 +104,16 @@ export const Events = [
         note: '',
         repeatable: 'monthly',
         event: {
+            repeatable: '',
             name: 'starpass',
-            timer: '2021-01-27T22:00:00+03:00'
+            timer: '2021-01-25T22:00:00+03:00'
         },
-        sub_events: []
+        sub_events: [
+            {
+                repeatable: '',
+                name: 'players update',
+                timer: '2021-04-22T22:00:00+03:00'
+            }
+        ]
     }
 ];

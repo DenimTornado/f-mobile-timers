@@ -1,0 +1,13 @@
+.group {
+    border-bottom:  1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    &__leagues {
+        margin-left: 20px;
+    }
+
+    &__league {
+        color: #bbb;
+        margin-bottom: 10px;
+    }
+}

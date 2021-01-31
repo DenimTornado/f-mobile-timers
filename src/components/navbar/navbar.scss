@@ -4,5 +4,9 @@
     align-items: center;
     a {
         padding: 0 10px;
+        text-decoration: none;
+        &.active {
+            text-decoration: underline;
+        }
     }
 }
