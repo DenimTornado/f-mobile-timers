@@ -27,7 +27,7 @@ export function floor10(value:any, exp = 0) {
     }
     value = +value;
     exp = +exp;
-    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+    if (isNaN(value) || !(exp % 1 === 0)) {
         return NaN;
     }
     value = value.toString().split('e');

@@ -1,5 +1,17 @@
 export const Events = [
     {
+        ids: 'flashbacks',
+        note: '',
+        event: {
+            name: 'flashbacks memories',
+            timer: '2021-08-05T22:00:00+03:00'
+        },
+        repeatable: '',
+        sub_events: [
+
+        ]
+    },
+    {
         ids: 'toty',
         note: '',
         event: {
@@ -61,7 +73,13 @@ export const Events = [
             name: 'League matchups',
             timer: '2021-01-18T22:00:00+03:00'
         },
-        sub_events: []
+        sub_events: [
+            {
+                name: 'players update',
+                repeatable: 'monthly',
+                timer: '2021-02-22T22:00:00+03:00'
+            }
+        ]
     },
     {
         ids: 'icons',
@@ -95,7 +113,7 @@ export const Events = [
             {
                 name: 'weekly update',
                 repeatable: 'weekly',
-                timer: '2021-01-25T22:00:00+03:00'
+                timer: '2021-01-27T22:00:00+03:00'
             }
         ]
     },
@@ -106,13 +124,13 @@ export const Events = [
         event: {
             repeatable: '',
             name: 'starpass',
-            timer: '2021-01-25T22:00:00+03:00'
+            timer: '2021-02-24T22:00:00+03:00'
         },
         sub_events: [
             {
                 repeatable: '',
                 name: 'players update',
-                timer: '2021-04-22T22:00:00+03:00'
+                timer: '2021-10-06T22:00:00+03:00'
             }
         ]
     }
