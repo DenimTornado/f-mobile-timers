@@ -37,7 +37,6 @@ export const EventRow = React.memo<OwnProps>((props) => {
 
                 <div className={ cn('sub_events') }>
                     { sub_events.map((value: any) => {
-                        console.log(value);
                         return <SubEventRow key={ value.ids } event={ value }/>
                     }) }
                 </div>
