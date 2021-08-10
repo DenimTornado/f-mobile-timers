@@ -2,10 +2,12 @@
     display: flex;
     align-self: flex-start;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    font-size: 14px;
 
     & > div {
         margin-left: 20px;
+        padding-bottom: 3px;
     }
 
     &__name {
@@ -16,6 +18,7 @@
 
     &__timer {
         color: #bbb;
+        text-align: right;
         &_expiring {
             color: lightcoral;
         }

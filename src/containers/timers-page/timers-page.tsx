@@ -6,7 +6,6 @@ import { getActualEvent } from '../../utils/getActualEvent';
 
 import './timers-page.scss';
 
-
 const cn = createCn('timers-page');
 const now = new Date().getTime();
 
@@ -18,8 +17,7 @@ export const TimersPage = React.memo(() => {
         for (let i = 0; i < Events.length; i++) {
             actualEvents[i] = getActualEvent(actualEvents[i]);
             let subEvents = actualEvents[i].sub_events;
-            console.log(actualEvents[i].ids);
-            console.log(subEvents);
+
             let actualSubEvents = [];
             for (let i = 0; i < subEvents.length; i++) {
                 const eventTimer = new Date(subEvents[i].timer).getTime();
@@ -35,14 +33,14 @@ export const TimersPage = React.memo(() => {
 
     return (
         <div className={ cn() }>
-            { actualEvents.map((value:any) => {
+            { actualEvents.map((value: any) => {
                 const eventTimer = new Date(value.event.timer).getTime();
                 if (eventTimer > now) {
-                    return <EventRow key={value.ids} event={ value }/>
+                    return <EventRow key={ value.ids } event={ value }/>
                 }
 
                 return null;
-            })}
+            }) }
         </div>
     );
 });

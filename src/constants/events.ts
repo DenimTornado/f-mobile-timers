@@ -1,5 +1,26 @@
 export const Events = [
     {
+        ids: 'summer',
+        note: '',
+        event: {
+            name: 'summer celebration',
+            timer: '2021-08-26T22:00:00+03:00'
+        },
+        repeatable: '',
+        sub_events: [
+            {
+                repeatable: '',
+                name: 'Energy offer (coins)',
+                timer: '2021-08-12T22:00:00+03:00'
+            },
+            {
+                repeatable: '',
+                name: 'Roulette update',
+                timer: '2021-08-12T22:00:00+03:00'
+            }
+        ]
+    },
+    {
         ids: 'flashbacks',
         note: '',
         event: {
@@ -71,13 +92,13 @@ export const Events = [
         repeatable: 'weekly',
         event: {
             name: 'League matchups',
-            timer: '2021-01-18T22:00:00+03:00'
+            timer: '2021-08-16T22:00:00+03:00'
         },
         sub_events: [
             {
                 name: 'players update',
                 repeatable: 'monthly',
-                timer: '2021-02-22T22:00:00+03:00'
+                timer: '2021-09-20T22:00:00+03:00'
             }
         ]
     },
@@ -107,7 +128,7 @@ export const Events = [
         repeatable: 'monthly',
         event: {
             name: 'division rivals',
-            timer: '2021-02-22T22:00:00+03:00'
+            timer: '2021-09-06T22:00:00+03:00'
         },
         sub_events: [
             {
@@ -122,7 +143,6 @@ export const Events = [
         note: '',
         repeatable: 'monthly',
         event: {
-            repeatable: '',
             name: 'starpass',
             timer: '2021-02-24T22:00:00+03:00'
         },

@@ -11,15 +11,24 @@ type OwnProps = Partial<{
 
 export const Group = React.memo<OwnProps>((props) => {
     const { name, leagues } = props.group;
+    const eventImg = '/fmt/img/groups/' + name.replace(/\s/g, '').toLowerCase() + '.png';
 
     return (
         <div className={ cn() }>
-            <h2>{name}</h2>
+            <div className={ cn('header') }>
+                <div className={ cn('img') }>
+                    <img src={ eventImg } alt=""/>
+                </div>
+                <div className={ cn('name') }>
+                    { name }
+                </div>
+            </div>
 
-            <div className={cn('leagues')}>
-                {leagues.map((league:string) => {
-                    return <div className={cn('league')}>{league}</div>
-                })}
+
+            <div className={ cn('leagues') }>
+                { leagues.map((league: string) => {
+                    return <div className={ cn('league') }>{ league }</div>
+                }) }
             </div>
         </div>
     );

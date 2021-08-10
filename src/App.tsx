@@ -5,6 +5,7 @@ import { TimersPage } from './containers/timers-page/timers-page';
 import { ChemistryGroups } from './containers/chemistry-groups/chemistry-groups';
 import { Logo } from './components/logo/logo';
 import { Navbar } from './components/navbar/navbar';
+import { NavLink } from 'react-router-dom'
 import { createCn } from 'bem-react-classname';
 
 import './App.scss';
@@ -17,7 +18,7 @@ function App() {
             <Router>
             <div className={ cn('header') }>
                 <div className='inner'>
-                    <Logo/>
+                    <NavLink exact={ true } to={'/fmt'} ><Logo/></NavLink>
                     <Navbar/>
                 </div>
             </div>
