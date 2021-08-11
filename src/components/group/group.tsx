@@ -15,20 +15,22 @@ export const Group = React.memo<OwnProps>((props) => {
 
     return (
         <div className={ cn() }>
-            <div className={ cn('header') }>
-                <div className={ cn('img') }>
-                    <img src={ eventImg } alt=""/>
-                </div>
-                <div className={ cn('name') }>
-                    { name }
-                </div>
+            <div className={ cn('img') }>
+                <img src={ eventImg } alt=""/>
             </div>
+            <div className={ cn('content') }>
+                <div className={ cn('header') }>
 
+                    <div className={ cn('name') }>
+                        { name }
+                    </div>
+                </div>
 
-            <div className={ cn('leagues') }>
-                { leagues.map((league: string) => {
-                    return <div className={ cn('league') }>{ league }</div>
-                }) }
+                <div className={ cn('leagues') }>
+                    { leagues.map((league: string) => {
+                        return <div className={ cn('league') }>{ league }</div>
+                    }) }
+                </div>
             </div>
         </div>
     );

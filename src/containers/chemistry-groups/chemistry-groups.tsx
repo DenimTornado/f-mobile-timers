@@ -10,9 +10,6 @@ const cn = createCn('chemistry-groups');
 export const ChemistryGroups = React.memo(() => {
     return (
         <div className={ cn() }>
-            <h1>
-                Regional Chemistry Groups
-            </h1>
             <div className={ cn('content') }>
                 {Groups.map((group) => {
                     return <Group group={group} />
