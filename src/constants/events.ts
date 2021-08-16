@@ -9,12 +9,12 @@ export const Events = [
         repeatable: '',
         sub_events: [
             {
-                repeatable: '',
+                repeatable: 'weekly',
                 name: 'Energy offer (coins)',
                 timer: '2021-08-12T22:00:00+03:00'
             },
             {
-                repeatable: '',
+                repeatable: 'weekly',
                 name: 'Roulette update',
                 timer: '2021-08-12T22:00:00+03:00'
             }
