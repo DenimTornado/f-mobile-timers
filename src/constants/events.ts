@@ -1,5 +1,26 @@
 export const Events = [
     {
+        ids: 'rivalries',
+        note: '',
+        event: {
+            name: 'rivalries',
+            timer: '2021-09-16T22:00:00+03:00'
+        },
+        repeatable: '',
+        sub_events: [
+            {
+                repeatable: 'weekly',
+                name: 'challenge mode',
+                timer: '2021-09-01T22:00:00+03:00'
+            },
+            {
+                repeatable: 'weekly',
+                name: 'weekly quests',
+                timer: '2021-09-02T22:00:00+03:00'
+            }
+        ]
+    },
+    {
         ids: 'summer',
         note: '',
         event: {
@@ -144,13 +165,18 @@ export const Events = [
         repeatable: 'monthly',
         event: {
             name: 'starpass',
-            timer: '2021-02-24T22:00:00+03:00'
+            timer: '2021-09-08T22:00:00+03:00'
         },
         sub_events: [
             {
                 repeatable: '',
                 name: 'players update',
                 timer: '2021-10-06T22:00:00+03:00'
+            },
+            {
+                name: 'quests update',
+                repeatable: 'weekly',
+                timer: '2021-08-25T22:00:00+03:00'
             }
         ]
     }
