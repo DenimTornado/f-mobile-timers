@@ -28,7 +28,7 @@ export const EventDuration = React.memo<OwnProps>((props) => {
             end: duration
         });
         if (diff > 2) {
-            const days = diff + 1;
+            const days = diff;
             setTimeLeft(`${ days } days`);
         }
         else {
