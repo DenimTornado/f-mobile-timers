@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom'
 import { createCn } from 'bem-react-classname';
 
 import './App.scss';
+import { CalculatorPage } from './containers/calculator-page/calculator-page';
 
 const cn = createCn('App');
 
@@ -34,6 +35,9 @@ function App() {
                             </Route>
                             <Route exact={ true } path={ '/fmt/events' }>
                                 <EventsPage/>
+                            </Route>
+                            <Route exact={ true } path={ '/fmt/calculator' }>
+                                <CalculatorPage/>
                             </Route>
                         </Switch>
 

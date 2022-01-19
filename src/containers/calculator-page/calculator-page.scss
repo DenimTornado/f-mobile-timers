@@ -1,0 +1,48 @@
+.calculator-page {
+    color: #eeeff0;
+    &__total {
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+    &__need {
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+    &__buttons {
+        margin-top: 40px;
+    }
+    table {
+        border: solid 1px #f6e1c2;
+        margin-top: 20px;
+        background: #1d1f2a;
+        text-align: left;
+        padding: 10px;
+        td, th {
+            box-sizing: border-box;
+            width: 100px;
+            font-weight: normal;
+            padding: 2px;
+        }
+        th {
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    }
+    input {
+        color: #7398e4;
+        background: #383c49;
+        border: none;
+        border-radius: 0;
+        padding: 5px 10px;
+        width: 80px;
+    }
+    button {
+        background: #3471ee;
+        border-radius: 0;
+        border: none;
+        color: #eeeff0;
+        text-transform: uppercase;
+        padding: 7px 50px;
+        cursor: pointer;
+    }
+}

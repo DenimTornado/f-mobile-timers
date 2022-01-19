@@ -1,4 +1,4 @@
-export const Events = [
+export const Events_21 = [
     {
         ids: 'freeze',
         note: '',

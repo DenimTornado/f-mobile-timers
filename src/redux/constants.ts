@@ -1,0 +1,7 @@
+export const LOADING_STATE = {
+    UNKNOWN: 'UNKNOWN',
+    STARTED: 'STARTED',
+    LOADING: 'LOADING',
+    SUCCESS: 'SUCCESS',
+    FAILURE: 'FAILURE',
+};

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createCn } from 'bem-react-classname';
-import { Events } from '../../constants/events';
+import Events  from '../../constants/events.json';
 import { EventRow } from '../../components/event-row/event-row';
 import { getActualEvent } from '../../utils/getActualEvent';
 
@@ -34,6 +34,7 @@ export const TimersPage = React.memo(() => {
     return (
         <div className={ cn() }>
             { actualEvents.map((value: any) => {
+                console.log(value.event);
                 const eventTimer = new Date(value.event.timer).getTime();
                 if (eventTimer > now) {
                     return <EventRow key={ value.ids } event={ value }/>

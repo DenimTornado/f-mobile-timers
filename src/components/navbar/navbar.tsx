@@ -11,6 +11,7 @@ export const Navbar = React.memo(() => {
         <div className={ cn() }>
             <NavLink exact={ true } to={ '/fmt' }>Timers</NavLink>
             <NavLink exact={ true } to={ '/fmt/chemistry' }>Chemistry Groups</NavLink>
+            <NavLink exact={ true } to={ '/fmt/calculator' }>OVR Calculator</NavLink>
         </div>
     );
 });
