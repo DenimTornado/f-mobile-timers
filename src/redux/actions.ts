@@ -16,58 +16,64 @@ export function onCount(): ThunkAction<void, AppStoreState, void, CalculatorStat
         let ranks = 0;
         let boosts = 0;
 
-        const test:any = {
-            boost1: '5',
-            boost2: '4',
-            boost3: '5',
-            boost4: '5',
-            boost5: '5',
-            boost6: '5',
-            boost7: '5',
-            boost8: '6',
-            boost9: '5',
-            boost10: '6',
-            boost11: '4',
-            ovr1: '93',
-            ovr2: '84',
-            ovr3: '88',
-            ovr4: '86',
-            ovr5: '86',
-            ovr6: '85',
-            ovr7: '87',
-            ovr8: '89',
-            ovr9: '84',
-            ovr10: '88',
-            ovr11: '87',
-            rank1: '5',
-            rank3: '5',
-            rank8: '6',
-            rank10: '6'
-        }
+        // const test:any = {
+        // boost1: "6",
+        //     boost2: "7",
+        //     boost3: "6",
+        //     boost4: "6",
+        //     boost5: "6",
+        //     boost6: "6",
+        //     boost7: "6",
+        //     boost8: "7",
+        //     boost9: "6",
+        //     boost10: "7",
+        //     boost11: "6",
+        //     ovr1: "88",
+        //     ovr2: "89",
+        //     ovr3: "93",
+        //     ovr4: "87",
+        //     ovr5: "87",
+        //     ovr6: "88",
+        //     ovr7: "88",
+        //     ovr8: "89",
+        //     ovr9: "90",
+        //     ovr10: "89",
+        //     ovr11: "88",
+        //     rank1: "5",
+        //     rank2: "5",
+        //     rank3: "5",
+        //     rank4: "5",
+        //     rank5: "5",
+        //     rank6: "5",
+        //     rank7: "5",
+        //     rank8: "5",
+        //     rank9: "5",
+        //     rank10: "10",
+        //     rank11: "5"
+        // }
 
-        for (let i = 1; i <= Object.keys(test).length; i++) {
-            if (test['ovr' + i]) {
-                ovr += parseInt(test['ovr' + i]);
+        for (let i = 1; i <= Object.keys(results).length; i++) {
+            if (results['ovr' + i]) {
+                ovr += parseInt(results['ovr' + i]);
             }
-            if (test['rank' + i]) {
-                ranks += parseInt(test['rank' + i]);
+            if (results['rank' + i]) {
+                ranks += Math.round(parseInt(results['rank' + i]) / 5);
             }
-            if (test['boost' + i]) {
-                boosts += parseInt(test['boost' + i]);
+            if (results['boost' + i]) {
+                boosts += parseInt(results['boost' + i]);
             }
         }
         const avgRanks = Math.ceil(ranks / 11);
         const avgBoosts = Math.ceil(boosts / 11);
-        const avgOvr = Math.ceil(ovr / 11);
+        const avgOvr = Math.ceil((ovr - ranks) / 11);
 
         const total = avgRanks + avgBoosts + avgOvr;
-        // const total = (ovr + ranks + boosts) / 11;
 
         dispatch(actionCreators.setTotal(total));
         dispatch(actionCreators.setNeeds({
             ranks: countNeed(ranks),
             boosts: countNeed(boosts),
-            ovr: countNeed(ovr)
+            ovr: countNeed(ovr, ranks)
         }));
     };
 }

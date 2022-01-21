@@ -21,7 +21,16 @@
 //     return decimalAdjust('ceil', value, exp);
 // }
 
-export function countNeed(need: number) {
-    const needMore = 11 - need % 11;
-    return needMore > 0 ? needMore : 0;
+export function countNeed(need: number, ranks?: number) {
+    let count = need;
+    if (ranks) {
+        count = count - ranks;
+    }
+    const roundedUp = Math.ceil(count / 11);
+    const avg = count / 11;
+
+    console.log(count, roundedUp, avg);
+
+    const needMore = (roundedUp - avg + 0.1 ) * 11;
+    return Math.round(needMore);
 }

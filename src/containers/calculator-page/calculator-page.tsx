@@ -58,10 +58,21 @@ export const CalculatorPage = React.memo(() => {
         <div className={ cn() }>
             <div className={ cn('data') }>
                 <div className={ cn('total') }>Total ovr: { total }</div>
-                <div className={ cn('need') }>Next OVR need:</div>
-                <div className={ cn('rate') }>Rating&nbsp;- { needs.ovr  }</div>
-                <div className={ cn('rank') }>or Ranks&nbsp;&nbsp;&nbsp;- { needs.ranks }</div>
-                <div className={ cn('boost') }>or Boosts&nbsp;&nbsp;- { needs.boosts }</div>
+                <div className={ cn('need') }>Next OVR need one of:</div>
+                <table className={cn('need-table')}>
+                    <tr>
+                        <td>OVR:</td>
+                        <td>{ needs.ovr }</td>
+                    </tr>
+                    <tr>
+                        <td>Ranks:</td>
+                        <td>{ needs.ranks }</td>
+                    </tr>
+                    <tr>
+                        <td>Boosts:</td>
+                        <td>{ needs.boosts }</td>
+                    </tr>
+                </table>
             </div>
             <div className={ cn('buttons') }>
                 <div className={ cn('count') }>
@@ -72,7 +83,7 @@ export const CalculatorPage = React.memo(() => {
                 <thead>
                 <tr>
                     <th>Rating</th>
-                    <th>Rank</th>
+                    <th>Tr.Level</th>
                     <th>Boost</th>
                 </tr>
                 </thead>

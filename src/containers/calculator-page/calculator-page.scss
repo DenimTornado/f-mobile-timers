@@ -1,12 +1,19 @@
 .calculator-page {
     color: #eeeff0;
     &__total {
+        font-size: 24px;
+        font-weight: bold;
         margin-top: 20px;
         text-transform: uppercase;
     }
     &__need {
         margin-top: 20px;
         text-transform: uppercase;
+    }
+    &__need-table {
+        td {
+            width: inherit !important;
+        }
     }
     &__buttons {
         margin-top: 40px;
