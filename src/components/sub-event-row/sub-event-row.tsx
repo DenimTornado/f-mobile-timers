@@ -14,6 +14,7 @@ export const SubEventRow = React.memo<OwnProps>((props) => {
     const { name, timer, expiring } = props.event;
     const [now, setNow] = useState(new Date());
     const eventDate = new Date(timer);
+    const longRange = new Date(new Date().getTime() + 31556952000);
 
     useEffect(() => {
         setInterval(() => {
@@ -26,7 +27,9 @@ export const SubEventRow = React.memo<OwnProps>((props) => {
         <div className={ cn() }>
             <div className={ cn('name') }>{ name }</div>
             <div className={ cn('timer', {expiring: expiring}) }>
-                <EventDuration now={ now } duration={ eventDate }/>
+                {longRange > eventDate &&
+                    <EventDuration now={ now } duration={ eventDate }/>
+                }
             </div>
         </div>
     );

@@ -16,6 +16,8 @@ export const EventRow = React.memo<OwnProps>((props) => {
     const [now, setNow] = useState(new Date());
     const eventDate = new Date(event.timer);
     const eventImg = '/fmt/img/programs/' + ids + '.png';
+    const longRange = new Date(new Date().getTime() + 31556952000);
+
 
     useEffect(() => {
         setInterval(() => {
@@ -31,7 +33,9 @@ export const EventRow = React.memo<OwnProps>((props) => {
                 <div className={ cn('main_event') }>
                     <div className={ cn('name') }>{ event.name }</div>
                     <div className={ cn('timer', {expiring: event.expiring}) }>
-                        <EventDuration now={ now } duration={ eventDate }/>
+                        {longRange > eventDate &&
+                            <EventDuration now={ now } duration={ eventDate }/>
+                        }
                     </div>
                 </div>
 
