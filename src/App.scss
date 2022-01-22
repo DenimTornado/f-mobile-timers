@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    background: #191233;
+    background: #1d202b;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -20,11 +20,15 @@ a {
 
     &__header {
         background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
         .inner {
             height: 60px;
-            max-width: 768px;
-            margin: 0 auto;
-            width: 100%;
+            //max-width: 768px;
+            //margin: 0 auto;
+            //width: 100%;
             display: flex;
             align-items: center;
         }

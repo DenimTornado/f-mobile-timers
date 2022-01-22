@@ -6,6 +6,7 @@ import queryString from 'query-string';
 import { TimersPage } from './timers-page/timers-page';
 import { CalculatorPage } from './calculator-page/calculator-page';
 import { ChemistryGroups } from './chemistry-groups/chemistry-groups';
+import { ChangelogPage } from './changelog-page/changelog-page';
 
 export const CustomRouter = React.memo(() => {
     const [route, setRoute] = useState(<TimersPage/>);
@@ -22,6 +23,9 @@ export const CustomRouter = React.memo(() => {
                 break;
             case 'calculator':
                 setRoute(<CalculatorPage/>);
+                break;
+            case 'changelog':
+                setRoute(<ChangelogPage/>);
                 break;
             default:
                 setRoute(<TimersPage/>);
