@@ -34,6 +34,11 @@ export function calculatorReducer(
                 ...state,
                 total: action.total
             };
+        case actionCreators.setResults.type:
+            return {
+                ...state,
+                results: action.results
+            };
         case actionCreators.setNeeds.type:
             return {
                 ...state,

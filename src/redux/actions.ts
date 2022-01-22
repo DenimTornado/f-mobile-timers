@@ -7,7 +7,6 @@ import { CalculatorStateActionsType } from './reducers';
 import { countNeed } from '../utils/countNeed';
 
 export function onCount(): ThunkAction<void, AppStoreState, void, CalculatorStateActionsType> {
-    console.log('onCount');
     return async (dispatch, getState) => {
         const state = getState();
         const results = calculatorSelector(state).results;
@@ -75,6 +74,31 @@ export function onCount(): ThunkAction<void, AppStoreState, void, CalculatorStat
             boosts: countNeed(boosts),
             ovr: countNeed(ovr, ranks)
         }));
+    };
+}
+
+export function onSave(): ThunkAction<void, AppStoreState, void, CalculatorStateActionsType> {
+    console.log('onSave');
+    return async (dispatch, getState) => {
+        const state = getState();
+        const results = calculatorSelector(state).results;
+        console.log(dispatch);
+        console.log(results);
+
+        localStorage.setItem('results', JSON.stringify(results));
+    };
+}
+
+export function onLoad(): ThunkAction<void, AppStoreState, void, CalculatorStateActionsType> {
+    console.log('onCount');
+    return async (dispatch) => {
+        if (localStorage.getItem('results')) {
+            const resultsSource = localStorage.getItem('results') || '';
+            const results = JSON.parse(resultsSource);
+            console.log(results);
+            dispatch(actionCreators.setResults(results));
+            dispatch(onCount());
+        }
     };
 }
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createCn } from 'bem-react-classname';
 import { NavLink } from 'react-router-dom'
+import { VERSION } from '../../constants';
 
 import './navbar.scss';
 
@@ -12,7 +13,7 @@ export const Navbar = React.memo(() => {
             <NavLink exact={ true } to={ '/fmt' }>Timers</NavLink>
             <NavLink exact={ true } to={ '/fmt/chemistry' }>Chemistry Groups</NavLink>
             <NavLink exact={ true } to={ '/fmt/calculator' }>OVR Calculator</NavLink>
-            <div>v2.1.2</div>
+            <div>{ VERSION }</div>
         </div>
     );
 });

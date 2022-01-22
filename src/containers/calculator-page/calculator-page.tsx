@@ -34,6 +34,20 @@ export const CalculatorPage = React.memo(() => {
         [dispatch]
     );
 
+    const onSave = useCallback(
+        () => {
+            dispatch(thunks.onSave());
+        },
+        [dispatch]
+    );
+
+    const onLoad = useCallback(
+        () => {
+            dispatch(thunks.onLoad());
+        },
+        [dispatch]
+    );
+
     useEffect(() => {
         console.log(results);
         // let actualEvents = [...Events];
@@ -59,25 +73,28 @@ export const CalculatorPage = React.memo(() => {
             <div className={ cn('data') }>
                 <div className={ cn('total') }>Total ovr: { total }</div>
                 <div className={ cn('need') }>Next OVR need one of:</div>
-                <table className={cn('need-table')}>
-                    <tr>
-                        <td>OVR:</td>
-                        <td>{ needs.ovr }</td>
-                    </tr>
-                    <tr>
-                        <td>Ranks:</td>
-                        <td>{ needs.ranks }</td>
-                    </tr>
-                    <tr>
-                        <td>Boosts:</td>
-                        <td>{ needs.boosts }</td>
-                    </tr>
-                </table>
-            </div>
-            <div className={ cn('buttons') }>
-                <div className={ cn('count') }>
+                <div className={cn('need-content')}>
+                    <table className={cn('need-table')}>
+                        <tr>
+                            <td>OVR:</td>
+                            <td>{ needs.ovr }</td>
+                        </tr>
+                        <tr>
+                            <td>Ranks:</td>
+                            <td>{ needs.ranks }</td>
+                        </tr>
+                        <tr>
+                            <td>Boosts:</td>
+                            <td>{ needs.boosts }</td>
+                        </tr>
+                    </table>
                     <button className={ cn('button') } onClick={ onCount }>Count</button>
                 </div>
+
+            </div>
+            <div className={ cn('buttons') }>
+                <button className={ cn('button_save') } onClick={ onSave }>Save</button>
+                <button className={ cn('button_load') } onClick={ onLoad }>Load</button>
             </div>
             <table>
                 <thead>
@@ -91,7 +108,13 @@ export const CalculatorPage = React.memo(() => {
                 { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((key) => (
                     <tr>
                         { ['ovr', 'rank', 'boost'].map((sub) => (
-                            <td><input type="number" id={ sub + key } onChange={ (e) => onChangeValue(sub + key, e) }/>
+                            <td>
+                                <input
+                                    type="number"
+                                    id={ sub + key }
+                                    onChange={ (e) => onChangeValue(sub + key, e) }
+                                    value={results[sub+key]}
+                                />
                             </td>
                         )) }
                     </tr>

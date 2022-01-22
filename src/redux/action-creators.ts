@@ -7,3 +7,4 @@ export const changeValue = createAction('GLOBAL_SEARCH / changeValue', (id: stri
 export const countOvr = createAction('GLOBAL_SEARCH / countOvr', () => ({}));
 export const setTotal = createAction('GLOBAL_SEARCH / setTotal', (total: number) => ({ total }));
 export const setNeeds = createAction('GLOBAL_SEARCH / setNeeds', (needs: any) => ({ needs }));
+export const setResults = createAction('GLOBAL_SEARCH / setResults', (results: any) => ({ results }));
