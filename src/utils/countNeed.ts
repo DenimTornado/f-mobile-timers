@@ -29,8 +29,6 @@ export function countNeed(need: number, ranks?: number) {
     const roundedUp = Math.ceil(count / 11);
     const avg = count / 11;
 
-    console.log(count, roundedUp, avg);
-
     const needMore = (roundedUp - avg + 0.1 ) * 11;
     return Math.round(needMore);
 }

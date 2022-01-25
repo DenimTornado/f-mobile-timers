@@ -10,7 +10,6 @@ export function onCount(): ThunkAction<void, AppStoreState, void, CalculatorStat
     return async (dispatch, getState) => {
         const state = getState();
         const results = calculatorSelector(state).results;
-        console.log(results);
         let ovr = 0;
         let ranks = 0;
         let boosts = 0;
@@ -78,27 +77,32 @@ export function onCount(): ThunkAction<void, AppStoreState, void, CalculatorStat
 }
 
 export function onSave(): ThunkAction<void, AppStoreState, void, CalculatorStateActionsType> {
-    console.log('onSave');
-    return async (dispatch, getState) => {
+    return async (_, getState) => {
         const state = getState();
         const results = calculatorSelector(state).results;
-        console.log(dispatch);
-        console.log(results);
+        const scheme = calculatorSelector(state).scheme;
 
+        localStorage.setItem('scheme', scheme);
         localStorage.setItem('results', JSON.stringify(results));
     };
 }
 
 export function onLoad(): ThunkAction<void, AppStoreState, void, CalculatorStateActionsType> {
-    console.log('onCount');
     return async (dispatch) => {
         if (localStorage.getItem('results')) {
+            const scheme = localStorage.getItem('scheme') || '41212';
+            dispatch(actionCreators.setScheme(scheme));
             const resultsSource = localStorage.getItem('results') || '';
             const results = JSON.parse(resultsSource);
-            console.log(results);
             dispatch(actionCreators.setResults(results));
             dispatch(onCount());
         }
+    };
+}
+
+export function setScheme(scheme:string): ThunkAction<void, AppStoreState, void, CalculatorStateActionsType> {
+    return async (dispatch) => {
+        dispatch(actionCreators.setScheme(scheme));
     };
 }
 

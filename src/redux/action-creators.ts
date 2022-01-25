@@ -8,3 +8,4 @@ export const countOvr = createAction('GLOBAL_SEARCH / countOvr', () => ({}));
 export const setTotal = createAction('GLOBAL_SEARCH / setTotal', (total: number) => ({ total }));
 export const setNeeds = createAction('GLOBAL_SEARCH / setNeeds', (needs: any) => ({ needs }));
 export const setResults = createAction('GLOBAL_SEARCH / setResults', (results: any) => ({ results }));
+export const setScheme = createAction('GLOBAL_SEARCH / setScheme', (scheme: string) => ({ scheme }));

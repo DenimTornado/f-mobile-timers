@@ -16,7 +16,7 @@ function App() {
             <Router>
             <div className={ cn('header') }>
                 <div className='inner'>
-                    <NavLink exact={ true } to={'/fmt'} ><Logo/></NavLink>
+                    <NavLink exact={ true } to={'/fmt?'} ><Logo/></NavLink>
                     <Navbar/>
                 </div>
             </div>

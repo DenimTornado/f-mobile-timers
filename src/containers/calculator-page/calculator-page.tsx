@@ -1,38 +1,37 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { createCn } from 'bem-react-classname';
 import { useDispatch, useSelector } from 'react-redux';
-// import Events  from '../../constants/events.json';
-// import { EventRow } from '../../components/event-row/event-row';
-// import { getActualEvent } from '../../utils/getActualEvent';
 import './calculator-page.scss';
 import * as actionCreators from '../../redux/action-creators';
 import * as thunks from '../../redux/actions';
-import { calculatorResultSelector, needsSelector, totalOvrSelector } from '../../redux/selectors';
+import { calculatorResultSelector, needsSelector, schemeSelector, totalOvrSelector } from '../../redux/selectors';
+import { SCHEMES } from '../../redux/constants';
 
 const cn = createCn('calculator-page');
-// const now = new Date().getTime();
 
 export const CalculatorPage = React.memo(() => {
-    // const [actualEvents, setActualEvents] = useState([]);
     const dispatch = useDispatch();
     const results = useSelector(calculatorResultSelector);
     const total = useSelector(totalOvrSelector);
     const needs = useSelector(needsSelector);
+    const scheme = useSelector(schemeSelector);
+    const [curScheme, setCurScheme] = useState('41212');
 
     const onChangeValue = useCallback(
         (id, e) => {
             console.log(id, e.target.value);
             dispatch(actionCreators.changeValue(id, e.target.value));
-        },
-        [dispatch]
-    );
-
-    const onCount = useCallback(
-        () => {
             dispatch(thunks.onCount());
         },
         [dispatch]
     );
+
+    // const onCount = useCallback(
+    //     () => {
+    //         dispatch(thunks.onCount());
+    //     },
+    //     [dispatch]
+    // );
 
     const onSave = useCallback(
         () => {
@@ -48,79 +47,69 @@ export const CalculatorPage = React.memo(() => {
         [dispatch]
     );
 
+    const onSelect = useCallback(
+        (e) => {
+            console.log(e.target.value);
+            setCurScheme(e.target.value);
+            dispatch(thunks.setScheme(e.target.value));
+        }, []
+    );
+
     useEffect(() => {
-        console.log(results);
-        // let actualEvents = [...Events];
-        // for (let i = 0; i < Events.length; i++) {
-        //     actualEvents[i] = getActualEvent(actualEvents[i]);
-        //     let subEvents = actualEvents[i].sub_events;
-        //
-        //     let actualSubEvents = [];
-        //     for (let i = 0; i < subEvents.length; i++) {
-        //         const eventTimer = new Date(subEvents[i].timer).getTime();
-        //         if (eventTimer > now || subEvents[i].repeatable !== '') {
-        //             actualSubEvents.push(getActualEvent(subEvents[i]));
-        //         }
-        //     }
-        //     actualEvents[i].sub_events = actualSubEvents;
-        // }
-        // // @ts-ignore
-        // setActualEvents(actualEvents);
-    }, [results]);
+        console.log(scheme);
+        setCurScheme(scheme);
+    }, [scheme]);
 
     return (
         <div className={ cn() }>
             <div className={ cn('data') }>
                 <div className={ cn('total') }>Total ovr: { total }</div>
-                <div className={ cn('need') }>Next OVR need one of:</div>
-                <div className={cn('need-content')}>
-                    <table className={cn('need-table')}>
-                        <tr>
-                            <td>OVR:</td>
-                            <td>{ needs.ovr }</td>
-                        </tr>
-                        <tr>
-                            <td>Ranks:</td>
-                            <td>{ needs.ranks }</td>
-                        </tr>
-                        <tr>
-                            <td>Boosts:</td>
-                            <td>{ needs.boosts }</td>
-                        </tr>
-                    </table>
-                    <button className={ cn('button') } onClick={ onCount }>Count</button>
+                <div className={cn('buttons')}>
+                    {/*<button className='button'  onClick={ onCount }>Count</button>*/}
+                    <button className='button_load'  onClick={ onLoad }>Load</button>
+                    <button className='button_save'  onClick={ onSave }>Save</button>
                 </div>
-
             </div>
-            <div className={ cn('buttons') }>
-                <button className={ cn('button_save') } onClick={ onSave }>Save</button>
-                <button className={ cn('button_load') } onClick={ onLoad }>Load</button>
-            </div>
-            <table>
-                <thead>
-                <tr>
-                    <th>Rating</th>
-                    <th>Tr.Level</th>
-                    <th>Boost</th>
-                </tr>
-                </thead>
-                <tbody>
-                { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((key) => (
+            <div className={cn('need-content')}>
+                <div className={ cn('need') }>Next OVR:</div>
+                <table className={cn('need-table')}>
                     <tr>
-                        { ['ovr', 'rank', 'boost'].map((sub) => (
-                            <td>
+                        <td>OVR:</td>
+                        <td>{ needs.ovr }</td>
+                    </tr>
+                    <tr>
+                        <td>Ranks:</td>
+                        <td>{ needs.ranks }</td>
+                    </tr>
+                    <tr>
+                        <td>Boosts:</td>
+                        <td>{ needs.boosts }</td>
+                    </tr>
+                </table>
+            </div>
+            <div className={cn('scheme')}>
+                <div>
+                    Formation:
+                </div>
+                <select id={'scheme'} value={curScheme} onChange={onSelect}>
+                    {SCHEMES.map((sch) => <option selected={curScheme === sch} value={sch}>{sch}</option>)}
+                </select>
+            </div>
+            <div className={cn("field")}>
+                { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((key) => (
+                    <div className={cn("position", { master:results['ovr'+key] >= 90, ["position_" + key]: true, [scheme]: true })}>
+                        { ['boost', 'ovr', 'rank'].map((sub) => (
+                            <div className={cn(sub)}>
                                 <input
-                                    type="number"
                                     id={ sub + key }
                                     onChange={ (e) => onChangeValue(sub + key, e) }
                                     value={results[sub+key]}
                                 />
-                            </td>
+                            </div>
                         )) }
-                    </tr>
+                    </div>
                 )) }
-                </tbody>
-            </table>
+            </div>
         </div>
     );
 });

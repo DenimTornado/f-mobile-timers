@@ -6,7 +6,8 @@ export type CalculatorStateActionsType = ActionType<typeof actionCreators>;
 export type CalculatorState = {
     results: any,
     total: number,
-    needs: any
+    needs: any,
+    scheme: string
 };
 
 const initialState: CalculatorState = {
@@ -16,7 +17,8 @@ const initialState: CalculatorState = {
         ranks: 0,
         boosts: 0,
         ovr: 0
-    }
+    },
+    scheme: '41212'
 };
 
 export function calculatorReducer(
@@ -43,6 +45,12 @@ export function calculatorReducer(
             return {
                 ...state,
                 needs: action.needs
+            };
+        case actionCreators.setScheme.type:
+            console.log(action.scheme);
+            return {
+                ...state,
+                scheme: action.scheme
             };
         default:
             return state;

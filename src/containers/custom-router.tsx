@@ -9,17 +9,19 @@ import { ChemistryGroups } from './chemistry-groups/chemistry-groups';
 import { ChangelogPage } from './changelog-page/changelog-page';
 
 export const CustomRouter = React.memo(() => {
-    const [route, setRoute] = useState(<TimersPage/>);
+    const [route, setRoute] = useState(<CalculatorPage/>);
     const location = useLocation();
 
     useEffect(() => {
         const values = queryString.parse(location.search);
         const {router} = values;
-        console.log(router);
 
         switch (router) {
             case 'chemistry':
                 setRoute(<ChemistryGroups/>);
+                break;
+            case 'timers':
+                setRoute(<TimersPage/>);
                 break;
             case 'calculator':
                 setRoute(<CalculatorPage/>);
@@ -28,7 +30,7 @@ export const CustomRouter = React.memo(() => {
                 setRoute(<ChangelogPage/>);
                 break;
             default:
-                setRoute(<TimersPage/>);
+                setRoute(<CalculatorPage/>);
         }
     }, [location]);
 
