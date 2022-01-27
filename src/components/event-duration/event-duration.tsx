@@ -22,14 +22,14 @@ export const EventDuration = React.memo<OwnProps>((props) => {
     const [timeLeft, setTimeLeft] = useState('');
 
     useEffect(() => {
-        const diff = differenceInDays(duration, now);
+        const endDate = new Date(duration);
+        const diff = differenceInDays(endDate, now);
         const interval = intervalToDuration({
             start: now,
-            end: duration
+            end: endDate
         });
         if (diff > 2) {
-            const days = diff;
-            setTimeLeft(`${ days } days`);
+            setTimeLeft(`${ diff } days`);
         }
         else {
             const days = interval.days && interval.days > 0 ? 24 : 0;

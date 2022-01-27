@@ -1,37 +1,45 @@
-import differenceInWeeks from 'date-fns/differenceInWeeks'
+// import differenceInWeeks from 'date-fns/differenceInWeeks'
+import differenceInHours from 'date-fns/differenceInHours'
+import differenceInDays from 'date-fns/differenceInDays'
 import add from 'date-fns/add'
 
-export function getActualEvent(event:any) {
+export function getActualEvent(event: any) {
     const now = new Date().getTime();
     let actualEvent = event;
-    let eventTime, newDate;
+    actualEvent.expiring = false;
 
-    if (event.event) {
-        eventTime = new Date(event.event.timer).getTime();
-    } else {
-        eventTime = new Date(event.timer).getTime();
+    if (actualEvent.end_timer) {
+        const end = actualEvent.end_timer;
+        const newDateSeconds = new Date(end).getTime();
+        actualEvent.expiring = newDateSeconds - now <= 1000 * 60 * 60 * 24;
+
+        // const weeks = differenceInWeeks(end, now) * -1 + 1;
+        actualEvent.timer = newDateSeconds;
     }
 
+    if (actualEvent?.repeatable?.date) {
+        const { date, type, value } = actualEvent?.repeatable;
+        const dateObj = new Date(date);
+        //Default type is 'd' for days
+        let addType = 'days';
+        let diffFunc = differenceInDays;
+        const valueNumber = value * 1;
 
-    if (actualEvent.repeatable !== '' && eventTime <= now) {
-        const weeks = differenceInWeeks(eventTime, now) * -1 + 1;
-        newDate = add(eventTime, {weeks});
-
-        if (actualEvent.event) {
-            actualEvent.event.timer = newDate;
-        } else {
-            actualEvent.timer = newDate;
+        if (type === 'h') {
+            addType = 'hours'
+            diffFunc = differenceInHours;
         }
-    }
 
-    const timer = actualEvent.event ? actualEvent.event.timer : actualEvent.timer;
-    const newDateSeconds = new Date(timer).getTime();
-    const expiring = newDateSeconds - now <= 1000 * 60 * 60 * 24;
+        const diff = diffFunc(now, dateObj) + 1;
+        let mod = diff % valueNumber;
+        if (mod === 1) {
+            mod  = valueNumber;
+        }
+        const nextUpdate = add(dateObj, {
+            [addType]: diff + mod
+        });
 
-    if (actualEvent.event) {
-        actualEvent.event.expiring = expiring;
-    } else {
-        actualEvent.expiring = expiring;
+        actualEvent.update_timer =  new Date(nextUpdate).getTime();
     }
 
     return actualEvent;

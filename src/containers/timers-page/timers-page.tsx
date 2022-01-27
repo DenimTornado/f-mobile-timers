@@ -6,6 +6,8 @@ import { getActualEvent } from '../../utils/getActualEvent';
 
 import './timers-page.scss';
 
+localStorage.setItem('evts', JSON.stringify(Events))
+
 const cn = createCn('timers-page');
 const now = new Date().getTime();
 
@@ -13,17 +15,20 @@ export const TimersPage = React.memo(() => {
     const [actualEvents, setActualEvents] = useState([]);
 
     useEffect(() => {
-        let actualEvents = [...Events];
+        let actualEvents = Events;
         for (let i = 0; i < Events.length; i++) {
             actualEvents[i] = getActualEvent(actualEvents[i]);
             let subEvents:any = actualEvents[i].sub_events;
-            console.log(subEvents.length);
 
             if (subEvents.length > 0) {
                 let actualSubEvents:any = [];
                 for (let i = 0; i < subEvents.length; i++) {
-                    const eventTimer = new Date(subEvents[i].timer).getTime();
-                    if (eventTimer > now || subEvents[i].repeatable !== '') {
+                    if (subEvents[i].end_timer) {
+                        const eventTimer = new Date(subEvents[i].end_timer).getTime();
+                        if (eventTimer > now) {
+                            actualSubEvents.push(getActualEvent(subEvents[i]));
+                        }
+                    } else {
                         actualSubEvents.push(getActualEvent(subEvents[i]));
                     }
                 }
@@ -36,14 +41,12 @@ export const TimersPage = React.memo(() => {
 
     return (
         <div className={ cn() }>
+            <div className={ cn('header-row') }>
+                <div className={ cn('ending')}>Ending</div>
+                <div className={ cn('update') }>Update</div>
+            </div>
             { actualEvents.map((value: any) => {
-                console.log(value.event);
-                const eventTimer = new Date(value.event.timer).getTime();
-                if (eventTimer > now) {
-                    return <EventRow key={ value.ids } event={ value }/>
-                }
-
-                return null;
+                return <EventRow key={ value.ids } event={ value } />;
             }) }
         </div>
     );

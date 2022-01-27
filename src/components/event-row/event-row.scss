@@ -20,6 +20,7 @@
         margin-bottom: 5px;
         & > div {
             margin-left: 20px;
+            min-width: 100px;
         }
     }
 
@@ -36,6 +37,11 @@
             color: lightcoral;
         }
     }
+
+    &__update {
+        text-align: right;
+    }
+
 
     &__sub_events {
         width: 100%;

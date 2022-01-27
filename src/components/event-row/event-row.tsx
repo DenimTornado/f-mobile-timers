@@ -12,12 +12,9 @@ type OwnProps = Partial<{
 }>
 
 export const EventRow = React.memo<OwnProps>((props) => {
-    const { ids, event, note, sub_events } = props.event;
+    const { event } = props;
     const [now, setNow] = useState(new Date());
-    const eventDate = new Date(event.timer);
-    const eventImg = '/fmt/img/programs/' + ids + '.png';
-    const longRange = new Date(new Date().getTime() + 31556952000);
-
+    const eventImg = '/fmt/img/programs/' + event.ids + '.png';
 
     useEffect(() => {
         setInterval(() => {
@@ -32,21 +29,26 @@ export const EventRow = React.memo<OwnProps>((props) => {
             <div className={ cn('content') }>
                 <div className={ cn('main_event') }>
                     <div className={ cn('name') }>{ event.name }</div>
-                    <div className={ cn('timer', {expiring: event.expiring}) }>
-                        {longRange > eventDate &&
-                            <EventDuration now={ now } duration={ eventDate }/>
+                    <div className={ cn('timer', { expiring: event.expiring }) }>
+                        { event.end_timer &&
+                            <EventDuration now={ now } duration={ event.end_timer }/>
+                        }
+                    </div>
+                    <div className={ cn('update') }>
+                        { event.update_timer &&
+                            <EventDuration now={ now } duration={ event.update_timer }/>
                         }
                     </div>
                 </div>
 
                 <div className={ cn('sub_events') }>
-                    { sub_events.map((value: any) => {
+                    { event.sub_events.map((value: any) => {
                         return <SubEventRow key={ value.ids } event={ value }/>
                     }) }
                 </div>
 
                 <div className={ cn('event_note') }>
-                    { note }
+                    { event.note }
                 </div>
             </div>
         </div>

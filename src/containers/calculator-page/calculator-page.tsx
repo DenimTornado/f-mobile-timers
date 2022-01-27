@@ -19,7 +19,6 @@ export const CalculatorPage = React.memo(() => {
 
     const onChangeValue = useCallback(
         (id, e) => {
-            console.log(id, e.target.value);
             dispatch(actionCreators.changeValue(id, e.target.value));
             dispatch(thunks.onCount());
         },
@@ -49,14 +48,12 @@ export const CalculatorPage = React.memo(() => {
 
     const onSelect = useCallback(
         (e) => {
-            console.log(e.target.value);
             setCurScheme(e.target.value);
             dispatch(thunks.setScheme(e.target.value));
         }, []
     );
 
     useEffect(() => {
-        console.log(scheme);
         setCurScheme(scheme);
     }, [scheme]);
 
