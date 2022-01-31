@@ -18,7 +18,7 @@ export const SubEventRow = React.memo<OwnProps>((props) => {
         setInterval(() => {
             const now = new Date();
             setNow(now)
-        }, 1000)
+        }, 5000)
     }, []);
 
     return (
@@ -31,7 +31,7 @@ export const SubEventRow = React.memo<OwnProps>((props) => {
             </div>
             <div className={ cn('update') }>
                 { event.update_timer &&
-                <EventDuration now={ now } duration={ event.update_timer }/>
+                    <EventDuration now={ now } duration={ event.update_timer }/>
                 }
             </div>
         </div>

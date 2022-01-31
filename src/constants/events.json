@@ -2,9 +2,9 @@
   {
     "ids": "begin",
     "name": "NEW BEGINNINGS",
-    "end_timer": "02/04/2022 22:00:00",
+    "end_timer": "2022-02-04T22:00:00+03:00",
     "repeatable": {
-      "date": "01/26/2022 22:00:00",
+      "date": "2022-01-26T22:00:00+03:00",
       "value": "1",
       "type": "d"
     },
@@ -16,8 +16,44 @@
     "name": "LEAGUE TOUR",
     "end_timer": "",
     "repeatable": {
-      "date": "01/26/2022 22:00:00",
+      "date": "2022-01-26T22:00:00+03:00",
       "value": "1",
+      "type": "d"
+    },
+    "note": "",
+    "sub_events": []
+  },
+  {
+    "ids": "challenge",
+    "name": "CHALLENGE MODE",
+    "end_timer": "",
+    "repeatable": {
+      "date": "2022-01-26T22:00:00+03:00",
+      "value": "1",
+      "type": "d"
+    },
+    "note": "",
+    "sub_events": []
+  },
+  {
+    "ids": "starpass",
+    "name": "starpass",
+    "end_timer": "",
+    "repeatable": {
+      "date": "2022-01-05T22:00:00+03:00",
+      "value": "30",
+      "type": "d"
+    },
+    "note": "",
+    "sub_events": []
+  },
+  {
+    "ids": "rivals",
+    "name": "division rivals",
+    "end_timer": "",
+    "repeatable": {
+      "date": "2022-01-17T22:00:00+03:00",
+      "value": "28",
       "type": "d"
     },
     "note": "",
@@ -28,7 +64,7 @@
     "name": "DAILY TRAINING",
     "end_timer": "",
     "repeatable": {
-      "date": "01/26/2022 22:00:00",
+      "date": "2022-01-26T22:00:00+03:00",
       "value": "1",
       "type": "d"
     },
@@ -39,7 +75,7 @@
         "name": "skill training",
         "end_timer": "",
         "repeatable": {
-          "date": "01/26/2022 22:00:00",
+          "date": "2022-01-26T22:00:00+03:00",
           "value": "3",
           "type": "d"
         },
@@ -51,7 +87,7 @@
         "name": "match training",
         "end_timer": "",
         "repeatable": {
-          "date": "01/27/2022 22:00:00",
+          "date": "2022-01-30T22:00:00+03:00",
           "value": "3",
           "type": "d"
         },
@@ -63,7 +99,7 @@
         "name": "special training",
         "end_timer": "",
         "repeatable": {
-          "date": "01/25/2022 22:00:00",
+          "date": "2022-01-28T22:00:00+03:00",
           "value": "3",
           "type": "d"
         },
@@ -73,13 +109,13 @@
     ]
   },
   {
-    "ids": "challenge",
-    "name": "CHALLENGE MODE",
+    "ids": "market",
+    "name": "Market update",
     "end_timer": "",
     "repeatable": {
-      "date": "01/26/2022 22:00:00",
-      "value": "1",
-      "type": "d"
+      "date": "2022-01-26T20:35:10+03:00",
+      "value": "2",
+      "type": "h"
     },
     "note": "",
     "sub_events": []
@@ -89,18 +125,6 @@
     "name": "ICON JOURNEYS",
     "end_timer": "",
     "repeatable": {},
-    "note": "",
-    "sub_events": []
-  },
-  {
-    "ids": "market",
-    "name": "Market update",
-    "end_timer": "",
-    "repeatable": {
-      "date": "01/26/2022 20:35:10",
-      "value": "2",
-      "type": "h"
-    },
     "note": "",
     "sub_events": []
   }

@@ -9,16 +9,14 @@ function parseEvent(data) {
     event.ids = data[0];
     event.name = data[2];
     if (data[3]) {
-        const dateArr = data[3].split('/');
-        event.end_timer = dateArr[1] + '/' + dateArr[0] + '/' + dateArr[2];
+        event.end_timer = data[10];
     } else {
         event.end_timer = '';
     }
 
     if (data[5]) {
-        const dateArr = data[5].split('/');
         event.repeatable = {
-            date: dateArr[1] + '/' + dateArr[0] + '/' + dateArr[2],
+            date: data[9],
             value: data[6],
             type: data[7],
 
@@ -61,7 +59,7 @@ fs.createReadStream('events.csv').pipe(es.split())
     for (const [key, value] of Object.entries(result)) {
         resultArr.push(value);
     }
-    fs.writeFile('events.json', JSON.stringify(resultArr), function (err) {
+    fs.writeFile('events.json', JSON.stringify(resultArr.reverse()), function (err) {
         if (err) return console.log(err);
         console.log('Hello World > helloworld.txt');
     });

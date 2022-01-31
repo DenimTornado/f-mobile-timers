@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import differenceInDays from 'date-fns/differenceInDays';
 import intervalToDuration from 'date-fns/intervalToDuration';
+import { differenceInHours } from 'date-fns';
+import { addLeadingZero } from '../../utils/addLeadingZero';
 
 import './event-duration.scss';
 
@@ -9,13 +11,7 @@ type OwnProps = Partial<{
     duration: any;
 }>
 
-const addLeadingZero = (number: number | undefined, add?: number) => {
-    if (!number || number === 0) {
-        return '00';
-    }
-    const withAdditional = add ? number + add : number;
-    return withAdditional < 10 ? '0' + withAdditional : withAdditional;
-};
+
 
 export const EventDuration = React.memo<OwnProps>((props) => {
     const { now, duration } = props;
@@ -23,15 +19,16 @@ export const EventDuration = React.memo<OwnProps>((props) => {
 
     useEffect(() => {
         const endDate = new Date(duration);
-        const diff = differenceInDays(endDate, now);
+        const diff = differenceInHours(endDate, now);
         const interval = intervalToDuration({
             start: now,
             end: endDate
         });
-        if (diff > 2) {
-            setTimeLeft(`${ diff } days`);
-        }
-        else {
+
+
+        if (diff >= 48) {
+            setTimeLeft(`${ differenceInDays(endDate, now) + 1} days`);
+        } else {
             const days = interval.days && interval.days > 0 ? 24 : 0;
             const hours = addLeadingZero(interval.hours, days);
             const minutes = addLeadingZero(interval.minutes);

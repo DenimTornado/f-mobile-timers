@@ -70,3 +70,35 @@
         padding: 10px 0;
     }
 }
+
+@media screen and (max-width: 415px) {
+    .event-row {
+        &__img {
+            display: none;
+        }
+
+        &__update {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        &__main_event {
+            & > div {
+                min-width: 80px;
+            }
+        }
+    }
+
+    .sub-event-row {
+        &__update {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+    }
+
+    .timers-page {
+        &__update {
+            margin-right: 20px;
+        }
+    }
+}

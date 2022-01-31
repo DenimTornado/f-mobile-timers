@@ -49,3 +49,42 @@ a {
         font-size: 0.8em;
     }
 }
+
+@media screen and (max-width: 415px) {
+    .App__content {
+        .inner {
+            max-width: 100%;
+        }
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .navbar {
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-end;
+        right: 0px;
+        top: 60px;
+        font-size: 20px;
+        padding: 10px;
+        a {
+            display: none;
+        }
+        &:hover {
+            background: #fff;
+            border: 1px solid #333;
+            a {
+                display: block;
+            }
+        }
+        &:before {
+            display: block;
+            position: absolute;
+            content: 'MENU';
+            top: -40px;
+        }
+
+    }
+}
