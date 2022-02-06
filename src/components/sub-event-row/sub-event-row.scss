@@ -1,9 +1,9 @@
 .sub-event-row {
     display: flex;
-    align-self: flex-start;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-size: 14px;
+    color: #7b7f8a;
 
     & > div {
         margin-left: 20px;
@@ -12,16 +12,20 @@
 
     &__name {
         width: 300px;
-        color: #7b7f8a;
         text-transform: capitalize;
     }
 
     &__timer {
-        color: #7b7f8a;
         text-align: right;
+        min-width: 100px;
         &_expiring {
             color: lightcoral;
         }
+    }
+
+    &__update {
+        text-align: right;
+        min-width: 100px;
     }
 
     @media only screen and (max-width: 600px) {

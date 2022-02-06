@@ -35,8 +35,16 @@ export const TimersPage = React.memo(() => {
                 actualEvents[i].sub_events = actualSubEvents;
             }
         }
+
+        const filteredEvents = actualEvents.filter((event) => {
+            if (event.end_timer) {
+                return new Date(event.end_timer).getTime() > now;
+            }
+            return true;
+        })
+
         // @ts-ignore
-        setActualEvents(actualEvents);
+        setActualEvents(filteredEvents);
     }, []);
 
     return (

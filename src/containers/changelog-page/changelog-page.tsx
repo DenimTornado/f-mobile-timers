@@ -11,6 +11,15 @@ export const ChangelogPage = React.memo(() => {
             <div className={cn("version")}>
                 Changelog
             </div>
+            <div className={cn('contacts')}>
+                <div>
+                    Contacts:
+                </div>
+                <div>
+                    <img src="/fmt/img/twitter.png" alt=""/><a href="https://twitter.com/DenimTornada">@DenimTornada</a>
+                </div>
+                <div><img src="/fmt/img/discord.png" alt=""/>denim3000#0908</div>
+            </div>
             <div className={cn("changes")}>
                 {LOG.map((log) => {
                     return <div className={cn('row')}>

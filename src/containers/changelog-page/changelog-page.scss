@@ -9,6 +9,30 @@
         padding: 20px;
     }
 
+    &__contacts {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        & > div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            &:not(:first-child) {
+                margin-right: 30px;
+            }
+            margin-right: 20px;
+        }
+        img {
+            margin-right: 10px;
+            width: 32px;
+        }
+        a {
+            color: #fff;
+        }
+    }
+
     ul {
         margin: 0;
         padding: 0;
