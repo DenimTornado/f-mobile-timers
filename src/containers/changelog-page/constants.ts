@@ -1,5 +1,11 @@
 export const LOG = [
     {
+        version: '3.11.3',
+        changes: [
+            'Добавлены таймеры Carniball',
+        ]
+    },
+    {
         version: '3.10.3',
         changes: [
             'Добавлены таймеры старта глав TOTY',
