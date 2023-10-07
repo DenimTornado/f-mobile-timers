@@ -21,14 +21,14 @@
 //     return decimalAdjust('ceil', value, exp);
 // }
 
-export function countNeed(need: number, ranks?: number) {
-    let sum = need;
-    if (ranks) {
-        sum = sum - ranks;
+export function countBase(ovr: string, rank: string) {
+    if (ovr && rank) {
+        return parseInt(ovr, 10) - parseInt(rank, 10);
+    } else if (!ovr && rank) {
+        return rank;
+    } else if (ovr && !rank) {
+        return ovr;
     }
-    const currentAverage = Math.ceil(sum / 11);
-    const targetSum = currentAverage * 11 + 0.01;
-    const diff = Math.ceil(targetSum - sum);
 
-    return Math.round(diff);
+    return 0;
 }

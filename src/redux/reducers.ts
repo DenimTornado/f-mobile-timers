@@ -27,6 +27,7 @@ export function calculatorReducer(
 ): CalculatorState {
     switch (action.type) {
         case actionCreators.changeValue.type:
+            console.log(action);
             return {
                 ...state,
                 results: {...state.results, [action.id]: action.value}

@@ -55,7 +55,7 @@ export function onCount(): ThunkAction<void, AppStoreState, void, CalculatorStat
                 ovr += parseInt(results['ovr' + i]);
             }
             if (results['rank' + i]) {
-                ranks += Math.floor(parseInt(results['rank' + i]) / 5);
+                ranks += parseInt(results['rank' + i]);;
             }
             if (results['boost' + i]) {
                 boosts += parseInt(results['boost' + i]);

@@ -20,7 +20,7 @@ export const Navbar = React.memo(() => {
         <div className={ cn() }>
             <NavLink activeClassName={getActiveClass(router, 'calculator')} to={ '/fmt?router=calculator' }>OVR Calculator</NavLink>
             <NavLink activeClassName={getActiveClass(router, 'timers')} to={ '/fmt?router=timers' }>Timers</NavLink>
-            <NavLink activeClassName={getActiveClass(router, 'chemistry')} to={ '/fmt?router=chemistry' }>Chemistry Groups</NavLink>
+            {/*<NavLink activeClassName={getActiveClass(router, 'chemistry')} to={ '/fmt?router=chemistry' }>Chemistry Groups</NavLink>*/}
             <NavLink activeClassName={getActiveClass(router, 'changelog')} exact={ true } to={ '/fmt?router=changelog' }>Changelog</NavLink>
         </div>
     );

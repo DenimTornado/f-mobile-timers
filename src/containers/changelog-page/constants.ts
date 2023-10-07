@@ -1,5 +1,11 @@
 export const LOG = [
     {
+        version: '4.0.0',
+        changes: [
+            'Калькулятор нового сезона',
+        ]
+    },
+    {
         version: '3.11.3',
         changes: [
             'Добавлены таймеры Carniball',

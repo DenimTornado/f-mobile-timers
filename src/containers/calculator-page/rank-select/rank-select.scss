@@ -1,0 +1,53 @@
+.rank-select {
+    &__dropdown {
+        position: absolute;
+        top: 26px;
+        left: 52px;
+        display: none;
+        z-index: 1;
+
+        &_visible {
+            display: block;
+        }
+    }
+
+    &__rank {
+        position: relative;
+        top: 164px;
+        font-weight: bold;
+
+        input {
+            width: 24px;
+            padding: 0 5px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+
+    &__rank-item {
+        width: 23px;
+        height: 26px;
+        background-image: url(../assets/ranks.png);
+        background-position: 0px 0px;
+        background-size: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &_1 {
+            background-position: 0px -26px;
+        }
+        &_2 {
+            background-position: 0px -52px;
+        }
+        &_3 {
+            background-position: 0px -80px;
+        }
+        &_4 {
+            background-position: 0px -107px;
+        }
+        &_5 {
+            background-position: 0px -134px;
+        }
+    }
+}
