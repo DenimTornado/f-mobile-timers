@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/fmt/static/css/main.ef0726cc.chunk.css",
-    "main.js": "/fmt/static/js/main.5de6ebd4.chunk.js",
-    "main.js.map": "/fmt/static/js/main.5de6ebd4.chunk.js.map",
-    "runtime-main.js": "/fmt/static/js/runtime-main.34958470.js",
-    "runtime-main.js.map": "/fmt/static/js/runtime-main.34958470.js.map",
-    "static/js/2.3e321e6a.chunk.js": "/fmt/static/js/2.3e321e6a.chunk.js",
-    "static/js/2.3e321e6a.chunk.js.map": "/fmt/static/js/2.3e321e6a.chunk.js.map",
-    "static/js/3.98a42576.chunk.js": "/fmt/static/js/3.98a42576.chunk.js",
-    "static/js/3.98a42576.chunk.js.map": "/fmt/static/js/3.98a42576.chunk.js.map",
-    "index.html": "/fmt/index.html",
-    "static/css/main.ef0726cc.chunk.css.map": "/fmt/static/css/main.ef0726cc.chunk.css.map",
-    "static/js/2.3e321e6a.chunk.js.LICENSE.txt": "/fmt/static/js/2.3e321e6a.chunk.js.LICENSE.txt",
-    "static/media/calculator-page.scss": "/fmt/static/media/grass.6bed313e.jpeg",
-    "static/media/rank-select.scss": "/fmt/static/media/ranks.7291868f.png"
+    "main.css": "/f-mobile-timers/static/css/main.ef6af8d4.chunk.css",
+    "main.js": "/f-mobile-timers/static/js/main.f73c5479.chunk.js",
+    "main.js.map": "/f-mobile-timers/static/js/main.f73c5479.chunk.js.map",
+    "runtime-main.js": "/f-mobile-timers/static/js/runtime-main.b5040c13.js",
+    "runtime-main.js.map": "/f-mobile-timers/static/js/runtime-main.b5040c13.js.map",
+    "static/js/2.3e321e6a.chunk.js": "/f-mobile-timers/static/js/2.3e321e6a.chunk.js",
+    "static/js/2.3e321e6a.chunk.js.map": "/f-mobile-timers/static/js/2.3e321e6a.chunk.js.map",
+    "static/js/3.98a42576.chunk.js": "/f-mobile-timers/static/js/3.98a42576.chunk.js",
+    "static/js/3.98a42576.chunk.js.map": "/f-mobile-timers/static/js/3.98a42576.chunk.js.map",
+    "index.html": "/f-mobile-timers/index.html",
+    "static/css/main.ef6af8d4.chunk.css.map": "/f-mobile-timers/static/css/main.ef6af8d4.chunk.css.map",
+    "static/js/2.3e321e6a.chunk.js.LICENSE.txt": "/f-mobile-timers/static/js/2.3e321e6a.chunk.js.LICENSE.txt",
+    "static/media/calculator-page.scss": "/f-mobile-timers/static/media/grass.6bed313e.jpeg",
+    "static/media/rank-select.scss": "/f-mobile-timers/static/media/ranks.7291868f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.34958470.js",
+    "static/js/runtime-main.b5040c13.js",
     "static/js/2.3e321e6a.chunk.js",
-    "static/css/main.ef0726cc.chunk.css",
-    "static/js/main.5de6ebd4.chunk.js"
+    "static/css/main.ef6af8d4.chunk.css",
+    "static/js/main.f73c5479.chunk.js"
   ]
 }
