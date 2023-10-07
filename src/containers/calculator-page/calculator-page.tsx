@@ -101,6 +101,7 @@ export const CalculatorPage = (() => {
                                     // onFocus={ (e) => onFocus(e) }
                                     onChange={ (e) => onChangeValue(sub + key, e) }
                                     value={ results[sub + key] }
+                                    type={ 'number' }
                                 />
                             </div>
                         )) }
