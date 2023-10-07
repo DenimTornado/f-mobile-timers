@@ -11,7 +11,7 @@ type OwnProps = Partial<{
 
 export const Group = React.memo<OwnProps>((props) => {
     const { name, leagues } = props.group;
-    const eventImg = '/fmt/img/groups/' + name.replace(/\s/g, '').toLowerCase() + '.png';
+    const eventImg = '/f-mobile-timers/img/groups/' + name.replace(/\s/g, '').toLowerCase() + '.png';
 
     return (
         <div className={ cn() }>

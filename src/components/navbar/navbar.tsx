@@ -18,10 +18,10 @@ export const Navbar = React.memo(() => {
 
     return (
         <div className={ cn() }>
-            <NavLink activeClassName={getActiveClass(router, 'calculator')} to={ '/fmt?router=calculator' }>OVR Calculator</NavLink>
-            <NavLink activeClassName={getActiveClass(router, 'timers')} to={ '/fmt?router=timers' }>Timers</NavLink>
+            <NavLink activeClassName={getActiveClass(router, 'calculator')} to={ '/f-mobile-timers?router=calculator' }>OVR Calculator</NavLink>
+            <NavLink activeClassName={getActiveClass(router, 'timers')} to={ '/f-mobile-timers?router=timers' }>Timers</NavLink>
             {/*<NavLink activeClassName={getActiveClass(router, 'chemistry')} to={ '/fmt?router=chemistry' }>Chemistry Groups</NavLink>*/}
-            <NavLink activeClassName={getActiveClass(router, 'changelog')} exact={ true } to={ '/fmt?router=changelog' }>Changelog</NavLink>
+            <NavLink activeClassName={getActiveClass(router, 'changelog')} exact={ true } to={ '/f-mobile-timers?router=changelog' }>Changelog</NavLink>
         </div>
     );
 });

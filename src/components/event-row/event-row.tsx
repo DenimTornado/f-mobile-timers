@@ -14,7 +14,7 @@ type OwnProps = Partial<{
 export const EventRow = React.memo<OwnProps>((props) => {
     const { event } = props;
     const [now, setNow] = useState(new Date());
-    const eventImg = '/fmt/img/programs/' + event.ids + '.png';
+    const eventImg = '/f-mobile-timers/img/programs/' + event.ids + '.png';
 
     useEffect(() => {
         setInterval(() => {
