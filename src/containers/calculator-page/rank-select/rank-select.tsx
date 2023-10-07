@@ -51,7 +51,7 @@ export const RankSelect = ((props: RankSelect) => {
             <div className={ cn('rank') }>
                 <div className={ cn('result') } onClick={ () => onRankClick() }>{ results[id] || 0 }</div>
                 <div className={ cn('dropdown', { visible: visible }) }>
-                    { [1, 2, 3, 4, 5].map((key) => (
+                    { [0, 1, 2, 3, 4, 5].map((key) => (
                         <div
                             className={ cn('rank-item', { [key]: true }) }
                             onClick={ () => onStoneClick(key) }

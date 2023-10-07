@@ -100,7 +100,7 @@ export const CalculatorPage = (() => {
                                     id={ sub + key }
                                     // onFocus={ (e) => onFocus(e) }
                                     onChange={ (e) => onChangeValue(sub + key, e) }
-                                    value={ results[sub + key] || 0 }
+                                    value={ results[sub + key] }
                                 />
                             </div>
                         )) }

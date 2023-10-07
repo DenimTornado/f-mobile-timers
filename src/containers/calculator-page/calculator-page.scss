@@ -1495,9 +1495,18 @@
         width: 100%;
         padding: 10px;
 
+        input {
+            background: #333;
+            color: #ddd;
+        }
+
         &__field {
             display: block;
             margin-left: 115px;
+        }
+
+        &__base_ovr {
+            display: none;
         }
 
         &__data {
@@ -1507,6 +1516,19 @@
 
         &__total {
             //font-size: 16px;
+        }
+
+        &__ovr {
+            position: relative;
+        }
+
+        &__stone {
+            left: 100px;
+        }
+
+        &__need-content {
+            width: 95px;
+            min-width: inherit;
         }
 
         &__buttons {
@@ -1533,13 +1555,15 @@
             align-items: flex-start;
             height: inherit;
             background: none !important;
+            margin: 10px 0;
 
             &:first-child {
                 & > div {
                     &:before {
                         position: absolute;
                         display: block;
-                        margin-top: -20px;
+                        margin-top: -30px;
+                        font-size: 24px;
                     }
                 }
 
@@ -1557,7 +1581,7 @@
 
                 .calculator-page__rank {
                     &:before {
-                        content: 'Tr.lvl';
+                        content: 'Rank';
                     }
                 }
             }

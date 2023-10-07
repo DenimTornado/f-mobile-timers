@@ -50,4 +50,19 @@
             background-position: 0px -134px;
         }
     }
+
+    @media screen and (max-width: 415px) {
+        top: 5px !important;
+        position: relative;
+
+        &__rank {
+            top: 7px;
+            left: 28px;
+        }
+
+        &__dropdown {
+            top: -7px;
+            left: -8px;
+        }
+    }
 }
