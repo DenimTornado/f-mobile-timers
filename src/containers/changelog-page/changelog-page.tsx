@@ -15,9 +15,6 @@ export const ChangelogPage = React.memo(() => {
                 <div>
                     Contacts:
                 </div>
-                <div>
-                    <img src="/f-mobile-timers/img/twitter.png" alt=""/><a href="https://twitter.com/DenimTornada">@DenimTornada</a>
-                </div>
                 <div><img src="/f-mobile-timers/img/discord.png" alt=""/>denim3000#0908</div>
             </div>
             <div className={cn("changes")}>
