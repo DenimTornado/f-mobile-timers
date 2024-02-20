@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/f-mobile-timers/static/css/main.88028087.chunk.css",
-    "main.js": "/f-mobile-timers/static/js/main.3f9f6627.chunk.js",
-    "main.js.map": "/f-mobile-timers/static/js/main.3f9f6627.chunk.js.map",
-    "runtime-main.js": "/f-mobile-timers/static/js/runtime-main.b5040c13.js",
-    "runtime-main.js.map": "/f-mobile-timers/static/js/runtime-main.b5040c13.js.map",
-    "static/js/2.3e321e6a.chunk.js": "/f-mobile-timers/static/js/2.3e321e6a.chunk.js",
-    "static/js/2.3e321e6a.chunk.js.map": "/f-mobile-timers/static/js/2.3e321e6a.chunk.js.map",
-    "static/js/3.98a42576.chunk.js": "/f-mobile-timers/static/js/3.98a42576.chunk.js",
-    "static/js/3.98a42576.chunk.js.map": "/f-mobile-timers/static/js/3.98a42576.chunk.js.map",
+    "main.css": "/f-mobile-timers/static/css/main.b73fe342.chunk.css",
+    "main.js": "/f-mobile-timers/static/js/main.0925ea9a.chunk.js",
+    "main.js.map": "/f-mobile-timers/static/js/main.0925ea9a.chunk.js.map",
+    "runtime-main.js": "/f-mobile-timers/static/js/runtime-main.5f6ffd76.js",
+    "runtime-main.js.map": "/f-mobile-timers/static/js/runtime-main.5f6ffd76.js.map",
+    "static/js/2.5fbdd9ee.chunk.js": "/f-mobile-timers/static/js/2.5fbdd9ee.chunk.js",
+    "static/js/2.5fbdd9ee.chunk.js.map": "/f-mobile-timers/static/js/2.5fbdd9ee.chunk.js.map",
+    "static/js/3.4c77571e.chunk.js": "/f-mobile-timers/static/js/3.4c77571e.chunk.js",
+    "static/js/3.4c77571e.chunk.js.map": "/f-mobile-timers/static/js/3.4c77571e.chunk.js.map",
     "index.html": "/f-mobile-timers/index.html",
-    "static/css/main.88028087.chunk.css.map": "/f-mobile-timers/static/css/main.88028087.chunk.css.map",
-    "static/js/2.3e321e6a.chunk.js.LICENSE.txt": "/f-mobile-timers/static/js/2.3e321e6a.chunk.js.LICENSE.txt",
+    "static/css/main.b73fe342.chunk.css.map": "/f-mobile-timers/static/css/main.b73fe342.chunk.css.map",
+    "static/js/2.5fbdd9ee.chunk.js.LICENSE.txt": "/f-mobile-timers/static/js/2.5fbdd9ee.chunk.js.LICENSE.txt",
     "static/media/calculator-page.scss": "/f-mobile-timers/static/media/grass.6bed313e.jpeg",
     "static/media/rank-select.scss": "/f-mobile-timers/static/media/ranks.7291868f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.b5040c13.js",
-    "static/js/2.3e321e6a.chunk.js",
-    "static/css/main.88028087.chunk.css",
-    "static/js/main.3f9f6627.chunk.js"
+    "static/js/runtime-main.5f6ffd76.js",
+    "static/js/2.5fbdd9ee.chunk.js",
+    "static/css/main.b73fe342.chunk.css",
+    "static/js/main.0925ea9a.chunk.js"
   ]
 }
